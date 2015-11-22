@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+article#sample {
+    display: flex;
+}
+
+article#sample > article {
+    border: solid 1px #000;
+    margin: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+article#profile-input > header > h2 {
+    margin: 0px;
+}
+
+article#profile-input > section,
+article#profile-input > footer,
+article#result > header,
+article#result > section {
+    margin-left: 24px;
+    margin-right: 24px;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>プロフィール一覧ページ</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <article id="sample">
+            <article id="profile-input">
+                <header>
+                    <h2>登録フォーム</h2>
+                </header>
+                    <section class="content">
+                    <dl>
+                        <dt>苗字</dt>
+                        <dd>
+                            <input type="text" v-model="profile.name.last">
+                        </dd>
+                        <dt>名前</dt>
+                        <dd>
+                            <input type="text" v-model="profile.name.first">
+                        </dd>
+                        <dt>タイプ</dt>
+                        <dd>
+                            <ul>
+                                <li>
+                                   <label>
+                                       <input type="radio" value="YOUTH" v-model="profile.type">
+                                       若手
+                                   </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" value="VETERAN" v-model="profile.type">
+                                        ベテラン
+                                    </label>
+                                </li>
+                            </ul>
+                        </dd>
+                        <dt>
+                            年齢
+                        </dt>
+                        <dd>
+                            <input type="text" v-model="profile.age">
+                        </dd>
+                    </dl>
+                </section>
+                <footer>
+                    <button v-on:click="save">保存</button>
+                </footer>
+            </article>
+            <article id="result">
+                <header>
+                    <button v-on:click="getResult">一覧ロード</button>
+                </header>
+                <section v-if="load">
+                    <dl>
+                        <dt>合計</dt>
+                        <dd v-text="result.summary.totalCount"></dd>
+                        <dt>若手</dt>
+                        <dd v-text="result.summary.younthCounts"></dd>
+                        <dt>ベテラン</dt>
+                        <dd v-text="result.summary.veteranCounts"></dd>
+                    </dl>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>氏名</th>
+                                <th>タイプ</th>
+                                <th>年齢</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="profile in result.profiles">
+                                <td>
+                                    <span v-text="profile.name.last"></span>
+                                    <span v-text="profile.name.first"></span>
+                                </td>
+                                <td>
+                                    <span v-if="profile.type == 'YOUTH'">若手</span>
+                                    <span v-if="profile.type == 'VETERAN'">ベテラン</span>
+                                </td>
+                                <td v-text="profile.age"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </article>
+        </article>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/1.2.0/superagent.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.8/vue.min.js"></script>
+        <script src="lib/script.js"></script>
+    </body>
+</html>
