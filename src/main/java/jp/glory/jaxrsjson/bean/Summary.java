@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Summary {
 
     private int totalCount;
-    private int younthCounts;
+    private int youthCounts;
     private int veteranCounts;
 
     public static Summary build(List<Profile> profiles) {
@@ -32,7 +32,7 @@ public class Summary {
     }
 
     public int getYounthCounts() {
-        return younthCounts;
+        return youthCounts;
     }
 
     public int getVeteranCounts() {
@@ -44,7 +44,7 @@ public class Summary {
     }
 
     public void setYounthCounts(int younthCounts) {
-        this.younthCounts = younthCounts;
+        this.youthCounts = younthCounts;
     }
 
     public void setVeteranCounts(int veteranCounts) {
