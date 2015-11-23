@@ -13,12 +13,13 @@ var inputForm = new Vue({
     methods: {
         save: function() {
             var that = this;
+            console.log(JSON.stringify(this.profile));
             window.superagent
                 .post("http://localhost:8080/JaxrsJson/api/profile/add")
                 .send(that.profile)
                 .set('Accept', 'application/json')
                 .end(function(err, res) {
-                    alert("保存が完了しました。")
+                    alert("保存が完了しました。");
                 });
         }
     }
@@ -37,6 +38,7 @@ var profileSummary = new Vue({
             window.superagent
                 .get("http://localhost:8080/JaxrsJson/api/profile/get")
                 .end(function(err, res) {
+                    console.log(JSON.stringify(res.body));
                     that.$set("result", res.body);
                 });
         }
