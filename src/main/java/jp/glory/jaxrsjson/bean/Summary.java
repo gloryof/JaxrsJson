@@ -21,7 +21,7 @@ public class Summary {
                 .collect(Collectors.groupingBy(Profile::getType));
 
         final List<Profile> emptyList = new ArrayList<>();
-        summary.setYounthCounts(result.getOrDefault(Type.YOUTH, emptyList).size());
+        summary.setYouthCounts(result.getOrDefault(Type.YOUTH, emptyList).size());
         summary.setVeteranCounts(result.getOrDefault(Type.VETERAN, emptyList).size());
 
         return summary;
@@ -31,23 +31,24 @@ public class Summary {
         return totalCount;
     }
 
-    public int getYounthCounts() {
+    public void setTotalCount(int totalCount) {
+        this.totalCount = totalCount;
+    }
+
+    public int getYouthCounts() {
         return youthCounts;
+    }
+
+    public void setYouthCounts(int youthCounts) {
+        this.youthCounts = youthCounts;
     }
 
     public int getVeteranCounts() {
         return veteranCounts;
     }
 
-    public void setTotalCount(int totalCount) {
-        this.totalCount = totalCount;
-    }
-
-    public void setYounthCounts(int younthCounts) {
-        this.youthCounts = younthCounts;
-    }
-
     public void setVeteranCounts(int veteranCounts) {
         this.veteranCounts = veteranCounts;
     }
+
 }
