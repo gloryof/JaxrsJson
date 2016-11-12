@@ -1,0 +1,27 @@
+= REST resources of JaxrsJson
+1.0-SNAPSHOT
+
+== `POST api/profile/add`
+
+=== Request
+*Content-Type*: `application/json` + 
+*Request Body*: (`jp.glory.jaxrsjson.bean.Profile`) + 
+`{"age":0,"name":{"first":"string","last":"string"},"type":"VETERAN"|"YOUTH"}` + 
+
+=== Response
+*Content-Type*: `\*/*`
+
+==== `200 OK`
+
+== `GET api/profile/get`
+
+=== Request
+_No body_ + 
+
+=== Response
+*Content-Type*: `application/json`
+
+==== `200 OK`
+*Response Body*: (`jp.glory.jaxrsjson.bean.ProfileResult`) + 
+`{"profiles":[{"age":0,"name":{"first":"string","last":"string"}],"type":"VETERAN"|"YOUTH"},"summary":{"totalCount":0,"veteranCounts":0,"youthCounts":0}}` + 
+

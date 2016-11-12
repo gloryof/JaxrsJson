@@ -1,0 +1,25 @@
+REST resources of JaxrsJson:
+1.0-SNAPSHOT
+
+POST api/profile/add:
+ Request:
+  Content-Type: application/json
+  Request Body: jp.glory.jaxrsjson.bean.Profile
+   {"age":0,"name":{"first":"string","last":"string"},"type":"VETERAN"|"YOUTH"}
+
+ Response:
+  Content-Type: */*
+  Status Codes: 200
+
+
+GET api/profile/get:
+ Request:
+  No body
+
+ Response:
+  Content-Type: application/json
+  Status Codes: 200
+   Response Body: jp.glory.jaxrsjson.bean.ProfileResult
+    {"profiles":[{"age":0,"name":{"first":"string","last":"string"}],"type":"VETERAN"|"YOUTH"},"summary":{"totalCount":0,"veteranCounts":0,"youthCounts":0}}
+
+
