@@ -26,6 +26,18 @@ public class ProfileHolder {
         profiles.add(Profile.build("鈴木", "一郎", Type.VETERAN, 42));
     }
 
+    /**
+     * プロフィールを保存.  
+     *
+     * プロフィールの内容を保存します。
+     * 保存する内容は下記になります。
+     * - 名前
+     * - タイプ
+     * - 年齢
+     *
+     * @param profile プロフィール情報
+     * @return 200 OK
+     */
     @POST
     @Path("add")
     @Consumes("application/json")
@@ -41,6 +53,11 @@ public class ProfileHolder {
         return Response.ok().build();
     }
 
+    /**
+     * プロフィールのリスト表示.
+     *
+     * @return プロフィールリスト
+     */
     @GET
     @Path("get")
     @Produces("application/json")

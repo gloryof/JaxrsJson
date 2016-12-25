@@ -13,6 +13,7 @@
     "paths":{
         "/profile/add":{
             "post":{
+                "description":"プロフィールを保存.  \n\n プロフィールの内容を保存します。\n 保存する内容は下記になります。\n - 名前\n - タイプ\n - 年齢",
                 "consumes":[
                     "application/json"
                 ],
@@ -25,7 +26,8 @@
                         "required":true,
                         "schema":{
                             "$ref":"#/definitions/Profile"
-                        }
+                        },
+                        "description":"プロフィール情報"
                     }
                 ],
                 "responses":{
@@ -39,6 +41,7 @@
         },
         "/profile/get":{
             "get":{
+                "description":"プロフィールのリスト表示.",
                 "consumes":[
                 ],
                 "produces":[
